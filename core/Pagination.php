@@ -6,14 +6,26 @@ use RedBeanPHP\R;
 
 class Pagination
 {
-
+    // текущая страница
     public $currentPage;
+
+    // кол-во записей выводимых на стрвницу по умолчанию
     public $perpage = 15;
+
+    // всего записей в таблице
     public $total;
+
+    // кол-во страниц
     public $countPages;
-    public $uri;
-    public $tableName;
-    protected $data;
+
+    // отслеживает параметр ?page=#
+    protected $uri;
+
+    // имя таблицы из которой нужно произвести выбор данных
+    protected $tableName;
+
+    // данные выбраные из бд 
+    protected $data = [];
 
     public function __construct($tableName, $perpage = null) {
         $this->tableName = $tableName;
@@ -29,26 +41,41 @@ class Pagination
         return $this->getHtml();
     }
 
+    /**
+     * Получает данные из бд
+     */
     protected function setData()
     {
-        return $this->data = R::findAll('news', "LIMIT {$this->getStart()}, {$this->perpage}");
+        return $this->data = R::findAll($this->tableName, "LIMIT {$this->getStart()}, {$this->perpage}");
     }
 
+    /**
+     * Возвращает данные полученные из бд
+     */
     public function getData()
     {
         return $this->data;
     }
 
+    /**
+     * Получате текущую страницу
+     */
     protected function getPage()
     {
         return isset($_GET['page']) ? (int) $_GET['page'] : 1;
     }
 
+    /**
+     * Получает кол-во записей в таблице $tableName
+     */
     protected function getTotal()
     {
         return R::count($this->tableName);
     }
 
+    /**
+     * Получает html для построения постраничного навигатора
+     */
     public function getHtml() {
 
         $back = null; // ссылка НАЗАД
@@ -90,20 +117,32 @@ class Pagination
         return '<ul class="pagination justify-content-center">' . $startpage.$back.$page2left.$page1left.'<li class="page-item active"><a class="page-link">'.$this->currentPage.'</a></li>'.$page1right.$page2right.$forward.$endpage . '</ul>';
     }
 
+    /**
+     * Получает общее кол-во страниц
+     */
     protected function getCountPages(){
         return ceil($this->total / $this->perpage) ?: 1;
     }
 
+    /**
+     * Получает текущую страницу
+     */
     protected function getCurrentPage($page){
         if(!$page || $page < 1) $page = 1;
         if($page > $this->countPages) $page = $this->countPages;
         return $page;
     }
 
+    /**
+     * Формирует параметр start для LIMIT
+     */
     public function getStart(){
         return ($this->currentPage - 1) * $this->perpage;
     }
 
+    /**
+     * Обрабатывает в GET параметрах значение page=#
+     */
     protected function getParams(){
         $url = $_SERVER['REQUEST_URI'];
         $url = explode('?', $url);
