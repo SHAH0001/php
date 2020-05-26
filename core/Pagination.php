@@ -2,28 +2,55 @@
 
 namespace Core;
 
+use RedBeanPHP\R;
+
 class Pagination
 {
 
     public $currentPage;
-    public $perpage;
+    public $perpage = 15;
     public $total;
     public $countPages;
     public $uri;
+    public $tableName;
+    protected $data;
 
-    public function __construct($page, $perpage, $total){
-        $this->perpage = $perpage;
-        $this->total = $total;
+    public function __construct($tableName, $perpage = null) {
+        $this->tableName = $tableName;
+        $this->perpage = $perpage ? (int) $perpage : 15;
+        $this->total = $this->getTotal();
         $this->countPages = $this->getCountPages();
-        $this->currentPage = $this->getCurrentPage($page);
+        $this->currentPage = $this->getCurrentPage($this->getPage());
         $this->uri = $this->getParams();
+        $this->data = $this->setData();
     }
 
     public function __toString(){
         return $this->getHtml();
     }
 
-    public function getHtml(){
+    protected function setData()
+    {
+        return $this->data = R::findAll('news', "LIMIT {$this->getStart()}, {$this->perpage}");
+    }
+
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    protected function getPage()
+    {
+        return isset($_GET['page']) ? (int) $_GET['page'] : 1;
+    }
+
+    protected function getTotal()
+    {
+        return R::count($this->tableName);
+    }
+
+    public function getHtml() {
+
         $back = null; // ссылка НАЗАД
         $forward = null; // ссылка ВПЕРЕД
         $startpage = null; // ссылка В НАЧАЛО
@@ -63,11 +90,11 @@ class Pagination
         return '<ul class="pagination justify-content-center">' . $startpage.$back.$page2left.$page1left.'<li class="page-item active"><a class="page-link">'.$this->currentPage.'</a></li>'.$page1right.$page2right.$forward.$endpage . '</ul>';
     }
 
-    public function getCountPages(){
+    protected function getCountPages(){
         return ceil($this->total / $this->perpage) ?: 1;
     }
 
-    public function getCurrentPage($page){
+    protected function getCurrentPage($page){
         if(!$page || $page < 1) $page = 1;
         if($page > $this->countPages) $page = $this->countPages;
         return $page;
@@ -77,7 +104,7 @@ class Pagination
         return ($this->currentPage - 1) * $this->perpage;
     }
 
-    public function getParams(){
+    protected function getParams(){
         $url = $_SERVER['REQUEST_URI'];
         $url = explode('?', $url);
         $uri = $url[0] . '?';
