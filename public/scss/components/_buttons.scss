@@ -1,0 +1,30 @@
+/*------- Buttons Style here -------*/
+.btn {
+    color: $white;
+    line-height: 1;
+    border-radius: 0;
+    font-family: $heading-font;
+    background-color: $theme-color;
+    border-radius: 50px;
+    font-weight: 500;
+
+    &:hover {
+        color: $white;
+        background-color: $black-soft;
+    }
+
+    &-hero {
+        font-size: 20px;
+        padding: 13px 24px 15px 24px;
+
+        // responsive
+        @media #{$sm-device} {
+            padding: 15px 25px;
+        }
+    }
+
+    &-all {
+        font-size: 18px;
+        padding: 14px 24px 15px 24px;
+    }
+}

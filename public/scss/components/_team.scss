@@ -1,0 +1,356 @@
+/*------ team area style  start ------*/
+.team-member {
+    position: relative;
+    text-align: center;
+
+    &-info {
+        bottom: 0;
+        left: 50%;
+        position: absolute;
+        background-color: #f8f8f8;
+        padding: 40px;
+        text-align: center;
+        white-space: nowrap;
+        transform: translateX(-50%);
+        box-shadow: 0px 0px 58px 6px rgba(28, 71, 193, 0.15);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.4s;
+
+        // responsive
+        @media #{$md-device} {
+            padding: 30px;
+        }
+
+        @media #{$sm-device} {
+            padding: 10px;
+        }
+
+        @media #{$xs-device} {
+            padding: 40px;
+        }
+    }
+
+    &:hover {
+        .team-member-info {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &--hover-effect {
+        text-align: center;
+
+        @media #{$lg-device, $md-device} {
+            margin-top: 130px;
+        }
+
+        @media #{ $sm-device} {
+            margin-top: 100px;
+        }
+        @media #{ $xs-device} {
+            margin-top: 100px;
+        }
+
+        &:before,
+        &:after {
+            top: 0;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            content: '';
+            position: absolute;
+            border: 1px solid #b9b9b9;
+            border-radius: 50%;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.4s;
+        }
+
+        &:after {
+            top: 0;
+            left: 55%;
+            width: 13px;
+            height: 13px;
+        }
+
+        .team-member-info {
+            left: 50%;
+            top: -100px;
+            content: '';
+            position: absolute;
+            transform: translateX(-6px) scale(0.7);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.4s;
+            white-space: nowrap;
+            text-align: left;
+            padding: 0;
+            background-color: transparent;
+            box-shadow: none;
+
+            // responsive
+            @media #{$md-device, $sm-device} {
+                top: -80px;
+            }
+        }
+
+        .team-member-name {
+            font-weight: 700;
+            padding-bottom: 3px;
+
+            a {
+                color: $black-soft;
+
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+
+        .team-member-desig {
+            font-weight: 400;
+        }
+
+        // hover affect
+        &:hover,
+        &.active,
+        &.team-open {
+
+            &:before,
+            &:after {
+                opacity: 1;
+                visibility: visible;
+                top: -23px;
+
+                // responsive
+                @media #{$md-device, $sm-device} {
+                    top: -15px;
+                }
+            }
+
+            &:after {
+                top: -45px;
+                transition-delay: 0.2s;
+
+                // responsive
+                @media #{$md-device, $sm-device} {
+                    top: -30px;
+                }
+            }
+
+            .team-member-info {
+                opacity: 1;
+                visibility: visible;
+                transition-delay: 0.6s;
+                transform: translateX(-6px) scale(1);
+
+                // responsive
+                @media #{$md-device} {
+                    transform: translateX(-6px) scale(1);
+                }
+            }
+        }
+    }
+}
+
+.team-content {
+
+    &.about-inner {
+        @media #{$lg-device} {
+            padding-right: 140px;
+        }
+
+        @media #{$md-device, $sm-device} {
+            margin-top: 0;
+        }
+    }
+
+    &--style_2 {
+        @media #{$lg-device, $md-device, $sm-device} {
+            margin-bottom: 65px;
+        }
+    }
+}
+
+.team-wrapper {
+    &.section-padding--pb_120 {
+        @media #{$lg-device, $md-device, $sm-device} {
+            padding-top: 0;
+        }
+    }
+
+    &--style_1 {
+        padding-top: 80px;
+
+        // responsive
+        @media #{$lg-device, $md-device, $sm-device} {
+            padding-top: 0;
+        }
+    }
+}
+
+.team-wrapper {
+    [class*="col-"] {
+        &:last-child {
+            .team-member {
+                &--hover-effect {
+                    .team-member-info {
+                        @media #{$md-device, $sm-device} {
+                            transform: translateX(-6px) scale(1);
+                            left: auto;
+                            right: 0;
+                        }
+
+                        @media #{$xs-device} {
+                            transform: translateX(-6px) scale(1);
+                            left: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &--style_1 {
+        [class*="col-"] {
+            @media #{$xxs-device} {
+                max-width: 100%;
+                flex: 100%;
+            }
+        }
+    }
+
+    &--style_3 {
+        .team-member {
+            &--hover-effect {
+                @media #{$lg-device} {
+                    margin-top: 30px;
+                }
+
+                @media #{$md-device, $sm-device} {
+                    margin-top: 40px;
+                }
+
+
+            }
+        }
+
+        [class*="col-"] {
+            @media #{$xxs-device} {
+                max-width: 100%;
+                flex: 100%;
+            }
+            .team-member {
+                &--hover-effect {
+                    @media #{$xs-device} {
+                        margin-top: 100px;
+                    }
+                }
+            }
+
+        }
+
+        .section-padding--pt_80 {
+            @media #{$xs-device} {
+                padding-top: 0;
+            }
+        }
+    }
+}
+
+
+/*------ team details start ------*/
+.team-member-details {
+    @media #{$md-device, $sm-device} {
+        margin-top: 60px;
+    }
+}
+
+.team-details-widget {
+    .quick-contact {
+        padding: 25px 25px 18px 25px;
+
+        .quick-title {
+            font-weight: 700;
+            color: $theme-color;
+            padding-bottom: 20px;
+        }
+
+        a {
+            display: block;
+            color: $black-soft;
+            margin-bottom: 10px;
+
+            &:hover {
+                color: $theme-color;
+            }
+        }
+
+        .team-sicial-link {
+            a {
+                display: inline-block;
+                color: $black-soft;
+                font-size: 18px;
+                margin-right: 15px;
+
+                &:hover {
+                    color: $theme-color;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+/*-- Single Skill --*/
+.single-skill {
+    margin-bottom: 30px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    & span {
+        display: block;
+        font-size: 14px;
+        line-height: 1;
+        color: $black-soft;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+    }
+
+    & .skill-bar {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #dbdbdb;
+        padding: 1px;
+
+        & .skill-progress {
+            display: block;
+            height: 100%;
+            background-color: $theme-color;
+            position: relative;
+
+            &::before {
+                content: attr(data-progress);
+                position: absolute;
+                right: 0;
+                bottom: 15px;
+                font-size: 14px;
+                line-height: 1;
+                color: $black-soft;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+
+/*------ team details end ------*/
+
+
+/*------ team area style end ------*/

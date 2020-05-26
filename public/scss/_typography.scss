@@ -1,0 +1,227 @@
+/*------ Typography Style Start ------*/
+
+body {
+    color: $paragraph;
+    line-height: 1.7;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: $font-family-base;
+}
+
+a {
+    transition: 0.4s;
+
+    &:hover,
+    &:focus {
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+p {
+    margin-bottom: 8px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-font;
+    color: $black-soft;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin: 0;
+    line-height: 1.5;
+}
+
+h1,
+.h1 {
+    font-size: 36px;
+
+    // responsive
+    @media #{$sm-device} {
+        font-size: 28px;
+    }
+
+    @media #{$xxs-device} {
+        font-size: 26px;
+    }
+}
+
+h2,
+.h2 {
+    font-size: 30px;
+
+    // responsive
+    @media #{$sm-device} {
+        font-size: 26px;
+    }
+
+    @media #{$xxs-device} {
+        font-size: 24px;
+    }
+}
+
+h3,
+.h3 {
+    font-size: 24px;
+
+    // responsive
+    @media #{$sm-device} {
+        font-size: 20px;
+    }
+}
+
+h4,
+.h4 {
+    font-size: 20px;
+}
+
+h5,
+.h5 {
+    font-size: 18px;
+}
+
+h6,
+.h6 {
+    font-size: 16px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+address {
+    margin-bottom: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    transition: 0.4s;
+}
+
+.bg-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.btn,
+button {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    box-shadow: none;
+    transition: 0.4s;
+    background-color: transparent;
+
+    &:active,
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+input,
+textarea {
+    resize: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.form-control {
+    &:focus {
+        border-color: $theme-color;
+        box-shadow: none;
+    }
+}
+
+/*--------- slick slider dot style start -------*/
+.slick-dot-style {
+    ul {
+        &.slick-dots {
+            bottom: 15px;
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+
+            li {
+                display: inline-block;
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                button {
+                    width: 14px;
+                    height: 14px;
+                    padding: 0;
+                    border: none;
+                    display: block;
+                    text-indent: -5000px;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    transition: 0.4s;
+                    border: 2px solid $paragraph-light;
+                    background-color: transparent;
+                }
+
+                &.slick-active button {
+                    border-color: $theme-color;
+                    background-color: $theme-color;
+                }
+            }
+        }
+    }
+}
+
+// custom container
+.container {
+    max-width: 1200px;
+
+    // responsive
+    @media #{$sm-device} {
+        max-width: 550px;
+    }
+
+    @media #{$xs-device} {
+        max-width: 450px;
+    }
+
+    @media #{$xxs-device} {
+        max-width: 300px;
+    }
+}

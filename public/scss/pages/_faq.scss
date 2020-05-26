@@ -1,0 +1,86 @@
+/*---------- faq style start ----------*/
+
+.faq-inner {
+    .card {
+        border: none;
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-body {
+            line-height: 1.8;
+            border: 1px solid $bdr-color;
+        }
+    }
+}
+
+.card-header {
+    padding: 0;
+    border: none;
+
+    button {
+        color: $black-soft;
+        font-size: 16px;
+        font-weight: 500;
+        width: 100%;
+        line-height: 1.2;
+        padding: 16px 30px;
+        text-align: left;
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        background-color: $bg-gray;
+        position: relative;
+
+        // responsive
+        @media #{$xxs-device} {
+            padding: 12px 10px;
+        }
+
+        &:hover {
+            background-color: $theme-color;
+            color: $white;
+        }
+
+        i {
+            color: $theme-color;
+            font-size: 20px;
+            padding-right: 10px;
+        }
+
+        &:before {
+            top: 50%;
+            right: 20px;
+            content: "\f107";
+            position: absolute;
+            font-family: $font-awesome;
+            transform: translateY(-50%);
+
+            // responsive
+            @media #{$xxs-device} {
+                right: 10px;
+            }
+        }
+    }
+}
+
+.faq-inner .card-header .accordio-heading[aria-expanded="false"] {
+    background-color: $bg-gray;
+}
+
+.faq-inner .card-header .accordio-heading[aria-expanded="true"] {
+    color: $white;
+    background-color: $theme-color;
+
+    i {
+        color: $white;
+    }
+
+    &:before {
+        content: "\f106";
+    }
+}
+
+/*---------- faq style end ----------*/

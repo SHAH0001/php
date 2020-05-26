@@ -1,0 +1,244 @@
+/*----- service policy start -----*/
+.service-policy {
+    &-item {
+
+        // responsive
+        /* @media #{$sm-device} {
+            text-align: center;
+            padding: 0 40px;
+        }
+
+        @media #{$xxs-device} {
+            padding: 0 15px;
+        } */
+        &:hover {
+            .service-policy-icon {
+                img {
+                    transform: scale(0.95) translateX(10px);
+                }
+            }
+        }
+    }
+
+    &-title {
+        font-weight: 700;
+        padding: 17px 0 8px;
+    }
+
+}
+
+.policy-wrapper-02 {
+    @media #{$md-device, $sm-device} {
+        margin-top: -45px;
+        margin-bottom: 26px;
+    }
+
+    .service-policy-item {
+        padding: 34px;
+        transition: 0.4s;
+
+        &:hover,
+        &.active {
+            box-shadow: 0px 0px 58.5px 6.5px rgba(28, 71, 193, 0.15);
+        }
+    }
+}
+
+.policy-area-02 {
+    @media #{$md-device, $sm-device} {
+        padding-top: 50px;
+    }
+}
+
+/*----- service policy  -----*/
+
+/*------ service section start ------*/
+.servivce-middle-thumb {
+    text-align: center;
+
+    // responsive
+    @media #{$md-device, $sm-device} {
+        margin-top: 60px;
+    }
+}
+
+.service {
+    &-item {
+        width: 218px;
+        text-align: left;
+
+        // responsive
+        @media #{$md-device} {
+            float: left;
+        }
+
+        @media #{$sm-device} {
+            width: 100%;
+        }
+
+        &:hover {
+            .service-icon {
+                img {
+                    transform: scale(0.95) translateX(10px);
+                }
+            }
+        }
+    }
+
+    &-title {
+        font-weight: 700;
+        padding: 18px 0 10px;
+
+        a {
+            color: $black-soft;
+
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+}
+
+.service-list {
+    &-left {
+        .service-item {
+
+            &:nth-child(1),
+            &:nth-child(3) {
+                margin-left: 52px;
+
+                // responsive
+                @media #{$lg-device, $md-device, $sm-device} {
+                    margin-left: 0;
+                }
+            }
+
+            // responsive
+            @media #{$md-device} {
+                margin-right: 30px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &-right {
+        .service-item {
+            &:nth-child(2) {
+                margin-left: 52px;
+
+                // responsive
+                @media #{$lg-device, $md-device, $sm-device} {
+                    margin-left: 0;
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            // responsive
+            @media #{$md-device} {
+                margin-right: 30px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.service-wrapper--style_2 {
+    .section-title {
+        text-align: center;
+    }
+
+    .service-item {
+        margin-bottom: 0;
+
+        // responsive
+        @media #{$md-device} {
+            width: 100%;
+        }
+    }
+}
+
+/*------ service section end ------*/
+
+/*------ service details page start ------*/
+.service-details-wrapper {
+    &.pb-125 {
+        @media #{$md-device, $sm-device} {
+            padding-bottom: 67px;
+        }
+    }
+}
+.service-details-widget {
+    @media #{$md-device, $sm-device} {
+        margin-top: 100px;
+    }
+}
+
+.service-single-widget {
+    padding: 25px;
+
+    .service-widget-title {
+        font-weight: 700;
+        padding-bottom: 20px;
+        line-height: 1;
+    }
+
+    .service-list {
+        li {
+            a {
+                color: $black-soft;
+                display: block;
+                margin-bottom: 10px;
+                position: relative;
+                padding-left: 35px;
+
+                &:before {
+                    width: 21px;
+                    height: 18px;
+                    left: 0;
+                    top: 50%;
+                    content: '';
+                    position: absolute;
+                    transform: translateY(-50%);
+                    background-image: url(../img/icon/check-tick.png);
+                }
+
+                &:hover {
+                    color: $theme-color;
+                    padding-left: 40px;
+                }
+            }
+
+            &:last-child {
+                a {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.service-details-content {
+    @media #{$xxl-device} {
+        padding-right: 30px;
+    }
+
+    h3 {
+        font-weight: 700;
+        padding-bottom: 10px;
+    }
+}
+
+/*------ service details page end ------*/

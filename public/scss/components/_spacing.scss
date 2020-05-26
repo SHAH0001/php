@@ -1,0 +1,162 @@
+/*------- short classes start -------*/
+.section-padding {
+    padding: 130px 0;
+
+    // responsive
+    @media #{$md-device, $sm-device} {
+        padding: 68px 0;
+    }
+
+    &--ptb_90 {
+        padding: 90px 0;
+
+        // responsive
+        @media #{$md-device, $sm-device} {
+            padding: 68px 0;
+        }
+    }
+
+    &--pt {
+        &_80 {
+            padding-top: 80px;
+
+            // responsive
+            @media #{$md-device, $sm-device} {
+                padding-top: 68px;
+            }
+        }
+    }
+
+    &--pb {
+        &_120 {
+            padding-bottom: 120px;
+
+            // responsive
+            @media #{$md-device, $sm-device} {
+                padding-bottom: 68px;
+            }
+        }
+    }
+}
+
+.pb-125 {
+    padding-bottom: 125px;
+
+    // responsive
+    @media #{$md-device, $sm-device} {
+        padding-bottom: 60px;
+    }
+}
+
+.pl-lg-45 {
+    @media only screen and (min-width: 992px) {
+        padding-left: 45px;
+    }
+}
+
+.pr-lg-45 {
+    @media only screen and (min-width: 992px) {
+        padding-right: 45px;
+    }
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-65 {
+    margin-top: 65px;
+
+    // responsive
+    @media #{$md-device, $sm-device} {
+        margin-top: 40px;
+    }
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
+.mtn-20 {
+    margin-top: -20px;
+}
+
+.mbn-30 {
+    margin-bottom: -30px;
+}
+
+.mtn-30 {
+    margin-top: -30px;
+}
+
+.mtn-40 {
+    margin-top: -40px;
+}
+
+.mtn-65 {
+    margin-top: -65px;
+
+    // responsive
+    @media #{$md-device, $sm-device} {
+        margin-top: -40px;
+    }
+}
+
+.mtn-10 {
+    margin-top: -10px;
+}
+
+.mtb-30 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.mtn-40 {
+    margin-top: -40px;
+}
+
+.ptb-30 {
+    padding: 30px 0;
+}
+
+.mtn-100 {
+    margin-top: -100px;
+}
+
+.mtmd-0 {
+    @media #{$md-device} {
+        margin-top: 0 !important;
+    }
+}
+
+.mtsm-0 {
+    @media #{$sm-device} {
+        margin-top: 0 !important;
+    }
+}
+
+/*------- short classes end -------*/

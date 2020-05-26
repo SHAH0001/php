@@ -1,0 +1,15 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "App\\": "app/"
+        },
+        "files": [
+            "core/helpers.php"
+        ]
+    },
+    "require": {
+        "vlucas/valitron": "^1.4",
+        "gabordemooij/redbean": "dev-master"
+    }
+}

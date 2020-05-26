@@ -1,0 +1,65 @@
+/*------- pricing table start -------*/
+.pricing-item {
+    border-radius: 5px;
+    padding: 50px 0;
+    text-align: center;
+    border: 1px solid $bdr-color;
+    transition: 0.4s;
+
+    &:hover,
+    &.active {
+        box-shadow: 0 0 30px 1px rgba(1, 26, 72, 0.12);
+    }
+}
+
+.dolar {
+    color: #011a48;
+    font-size: 26px;
+    font-weight: 600;
+    padding-right: 3px;
+    vertical-align: super;
+}
+
+.price-head {
+    background-image: url(../../assets/img/bg/1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    h2 {
+        font-size: 60px;
+        font-weight: 700;
+        display: inline-block;
+
+        // responsive
+        @media #{$xxs-device} {
+            font-size: 36px;
+        }
+    }
+
+    h4 {
+        display: inline-block;
+    }
+}
+
+.pricing-title {
+    color: $theme-color;
+    font-size: 30px;
+    display: block;
+    padding-top: 15px;
+}
+
+.pricing-list {
+    margin-bottom: 20px;
+    padding: 30px;
+
+    li {
+        padding: 10px 0;
+        border-bottom: 1px solid $bdr-color;
+
+        &:first-child {
+            border-top: 1px solid $bdr-color;
+        }
+    }
+}
+
+/*------- pricing table end -------*/
