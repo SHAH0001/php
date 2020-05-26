@@ -10,7 +10,7 @@ class Auth
             return true;
         }
 
-        return redirect('/');
+        return redirect('/home');
     }
 
     /**

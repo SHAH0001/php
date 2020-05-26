@@ -2,7 +2,7 @@
 
 use Core\Router;
 
-Router::get('/home', 'HomeController@index');
+Router::get('/', 'HomeController@index');
 Router::get('/about', 'HomeController@about');
 
 Router::get('/login', 'AuthController@showLoginForm');

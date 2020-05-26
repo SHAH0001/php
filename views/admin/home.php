@@ -9,7 +9,7 @@
 <body>
     <h1>Admin panel</h1>
     <br />
-    <a href='http://php/logout'>Logout</a>
+    <a href='http://php.io/logout'>Logout</a>
     <br />
     <?php dd($_SESSION['auth_user']); ?>
 </body>

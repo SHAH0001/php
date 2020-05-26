@@ -13,10 +13,12 @@ class AuthController
 {
     protected $errors = [];
 
+    protected $path = '/';
+
     public function showLoginForm()
     {
         if(Auth::check()) {
-            return redirect('/');
+            return redirect($this->path);
         }
         return View::render('auth\\login');
     }
@@ -24,7 +26,7 @@ class AuthController
     public function showRegisterForm()
     {
         if(Auth::check()) {
-            return redirect('/');
+            return redirect($this->path);
         }
         return View::render('auth\\register');
     }
@@ -66,7 +68,7 @@ class AuthController
     {
         if(isset($_SESSION['auth_user'])) {
             session_destroy();
-            redirect('/');
+            redirect($this->path);
         }
     }
 

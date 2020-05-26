@@ -39,13 +39,13 @@ class Router
 
     protected function reviewGet($uri)
     {
-        if(!strpos($uri, '?')) {
+        if(!stristr($uri, '?')) {
             return $uri;
         }
 
         list($queryString, $parameters) = explode('?', $uri);
 
-        if($queryString == '') {
+        if(!$queryString) {
             return '/';
         }
 

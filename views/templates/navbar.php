@@ -39,7 +39,7 @@
                     <div class="row align-items-center">
                         <div class="col-sm-4">
                             <div class="login-register text-center">
-                                <a href="/home">News Blog</a>
+                                <a href="/">News Blog</a>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3">
                             <div class="brand-logo">
-                                <a href="/home">
+                                <a href="/">
                                     <img src="public/img/logo/logo.png" alt="brand logo">
                                 </a>
                             </div>
@@ -59,7 +59,7 @@
                             <div class="main-menu-inner">
                                 <nav class="main-menu">
                                     <ul>
-                                        <li class="active"><a href="/home">Home</a></li>
+                                        <li class="active"><a href="/">Home</a></li>
                                         <li class="active"><a href="/about">About</a></li>
 
                                         <?php if(Core\Middleware\Auth::check()) : ?>
@@ -86,7 +86,7 @@
                     <div class="col-12">
                         <div class="mobile-main-header">
                             <div class="mobile-logo">
-                                <a href="/home">
+                                <a href="/">
                                     <img src="public/img/logo/logo.png" alt="Brand Logo">
                                 </a>
                             </div>
